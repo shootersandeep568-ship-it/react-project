@@ -6,7 +6,7 @@ function Product() {
     const [api, setApi] = useState([]);
     console.log(api);
     async function getProduct(e) {
-        await axios.get("http://localhost:8000/Cart/Productapi").then((res) => {
+        await axios.get("https://react-project-backemd.vercel.app/Cart/Productapi").then((res) => {
             setApi(res.data.AllProduct);
         });
     }
