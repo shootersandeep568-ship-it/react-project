@@ -1,11 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
 
 const ProductDetails = () => {
-    const Navigate = useNavigate();
     const { id } = useParams();
     let [apiData, setApiData] = useState([]);
     console.log(apiData);
@@ -17,7 +14,7 @@ const ProductDetails = () => {
     }
     useEffect(() => {
         getData();
-    }, []);
+    }, [getData]);
 
     async function AddToCart(id) {
         console.log(id)
@@ -28,7 +25,6 @@ const ProductDetails = () => {
     }
     return (
         <>
-            <Toaster />
             <div className="productDetails">
                 {/* LEFT */}
                 <h1>Product Details</h1>
