@@ -38,7 +38,7 @@ function Login() {
   return (
     <>
       <Toaster />
-      <Header/>
+      <Header />
       <div className='login'>
         <div className='login1'>
           <h2>Login</h2>
