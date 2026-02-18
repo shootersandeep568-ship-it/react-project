@@ -21,13 +21,13 @@ function Createproduct() {
         fdata.append("title", Createproductdata.title);
         fdata.append("description", Createproductdata.description);
         fdata.append("images", productImg);
-        fdata.append("reting",Createproductdata.reting)
-        fdata.append("price",Createproductdata.price)
-        fdata.append("category",Createproductdata.category)
-        fdata.append("pyandmy",Createproductdata.pyandmy)
+        fdata.append("reting", Createproductdata.reting)
+        fdata.append("price", Createproductdata.price)
+        fdata.append("category", Createproductdata.category)
+        fdata.append("pyandmy", Createproductdata.pyandmy)
 
 
-        let data = await axios.post("http://localhost:8000/cart/Createproduct", fdata).then((res) => {
+        await axios.post("http://localhost:8000/cart/Createproduct", fdata).then((res) => {
             if (res.data.status) {
                 toast.success("Successs product");
                 setTimeout(() => {
@@ -41,7 +41,7 @@ function Createproduct() {
     return (
         <>
             <Toaster />
-            <Header/>
+            <Header />
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
                 <div className='createform'>
                     <div style={{ textAlign: "center" }}>
@@ -50,7 +50,7 @@ function Createproduct() {
                     <form action="" onSubmit={handleSubmit} enctype="multipart/form-data">
                         <div className='createform1'>
                             <label htmlFor="">title</label>
-                            <input type="text" name="title" id="" onChange={getCreateproductdata} required/>
+                            <input type="text" name="title" id="" onChange={getCreateproductdata} required />
                         </div>
                         <div className='createform1'>
                             <label htmlFor="">description</label>
@@ -69,11 +69,11 @@ function Createproduct() {
                         </div>
                         <div className='createform1'>
                             <label htmlFor="">price</label>
-                            <input type="text" name="price" id="" onChange={getCreateproductdata} required/>
+                            <input type="text" name="price" id="" onChange={getCreateproductdata} required />
                         </div>
                         <div className='createform1'>
                             <label htmlFor="">category</label>
-                            <select name="category" id="" onChange={getCreateproductdata }>
+                            <select name="category" id="" onChange={getCreateproductdata}>
                                 <option value="Selectctgy">Select Category</option>
                                 <option value="minutes">Minutes</option>
                                 <option value="mob">Mobiles & Tablets</option>

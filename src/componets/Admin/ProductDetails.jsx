@@ -9,19 +9,18 @@ const ProductDetails = () => {
     async function getData() {
         let getApiData = await axios.get("http://localhost:8000/Cart/Productapi")
         let filterData = await getApiData.data.AllProduct
-        const finalData = filterData.find((item) => item._id == id)
+        const finalData = filterData.find((item) => item._id === id)
         setApiData(finalData)
     }
     useEffect(() => {
         getData();
-    }, [getData]);
+    });
 
     async function AddToCart(id) {
         console.log(id)
-        let data = await axios
-            .post(`http://localhost:8000/cart/addtocart/${id}`).then((res) => {
-                console.log(res);
-            });
+        await axios.post(`http://localhost:8000/cart/addtocart/${id}`).then((res) => {
+            console.log(res);
+        });
     }
     return (
         <>
@@ -35,7 +34,7 @@ const ProductDetails = () => {
                                 ...new Uint8Array(apiData?.image?.data?.data || "")
                             )
                         )}`}
-                    />
+                    alt="images"/>
                     <div className="thumbs">
                     </div>
                     <div className="actions">

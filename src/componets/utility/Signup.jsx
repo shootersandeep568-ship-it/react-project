@@ -9,7 +9,7 @@ import Header from './Header';
 
 // ================================ datasave ============================================================
 function Signup() {
-    const Navigate = useNavigate();
+  const Navigate = useNavigate();
   let [alldata, setalldata] = useState()
   console.log("alldata", alldata)
   function getalldata(e) {
@@ -21,11 +21,11 @@ function Signup() {
   // ============================= submit handal=============================================================
   async function handleSubmit(e) {
     e.preventDefault()
-    let data = await axios.post("http://localhost:8000/Product/signup", alldata).then((res) => {
+    await axios.post("http://localhost:8000/Product/signup", alldata).then((res) => {
       if (res.data.status) {
         toast.success("Successs");
         setTimeout(() => {
-           Navigate("/Login")
+          Navigate("/Login")
         }, 3000);
       }
       else {
@@ -38,7 +38,7 @@ function Signup() {
   return (
     <>
       <Toaster />
-      <Header/>
+      <Header />
       <div className='signup'>
         <div className='signup1'>
           <h2>Sign Up</h2>

@@ -20,7 +20,7 @@ function Login() {
   // ============================= submit handal  ==================================================
   async function handleSubmit(e) {
     e.preventDefault()
-    let data = await axios.post("http://localhost:8000/Product/Login", alldata).then((res) => {
+    await axios.post("http://localhost:8000/Product/Login", alldata).then((res) => {
       console.log(res)
       if (res.data.status) {
         toast.success("Successs");

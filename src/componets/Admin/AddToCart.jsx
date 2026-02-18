@@ -34,10 +34,9 @@ const AddToCart = () => {
     const [cartapi, setcartApi] = useState([]);
     console.log(cartapi);
     async function Addtocartt(e) {
-        let data = await axios
-            .get("http://localhost:8000/cart/getCart").then((res) => {
-                setcartApi(res.data.data)
-            });
+        await axios.get("http://localhost:8000/cart/getCart").then((res) => {
+            setcartApi(res.data.data)
+        });
     }
     useEffect(() => {
         Addtocartt();
@@ -45,10 +44,9 @@ const AddToCart = () => {
 
     const removeItem = (id) => {
         console.log(id)
-        let removecart = axios
-            .post(`http://localhost:8000/cart/deleteCartItem/${id}`).then((res) => {
-                console.log(res);
-            });
+        axios.post(`http://localhost:8000/cart/deleteCartItem/${id}`).then((res) => {
+            console.log(res);
+        });
     };
 
 
