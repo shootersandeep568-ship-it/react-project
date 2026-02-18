@@ -13,7 +13,6 @@ function About() {
             <a href="https://www.flipkart.com/valentine-day-sale-store?otracker=undefined_footer" title='Valentine Day Sale'>Bage for men </a>
             <a href="https://www.flipkart.com/valentine-day-sale-store?otracker=undefined_footer" title='Valentine Day Sale'>Laptop Store</a>
             <a href="https://www.flipkart.com/valentine-day-sale-store?otracker=undefined_footer" title='Valentine Day Sale'>Mixer juicer grider</a>
-          
 
         </div>
       </div>
