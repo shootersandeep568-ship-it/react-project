@@ -1,0 +1,37 @@
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Signup from './componets/utility/Signup';
+import Login from './componets/utility/Login';
+import Slider from './componets/Homepage/Slider';
+import Homepg from './componets/Homepage/Homepg';
+import Header from './componets/utility/Header';
+import Sliderimg from './componets/Homepage/Sliderimg';
+import Createproduct from './componets/Admin/Createproduct';
+import Product from './componets/Admin/Product';
+import AddToCart from './componets/Admin/AddToCart';
+import ProductDetails from './componets/Admin/ProductDetails';
+
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Homepg />}></Route>
+          <Route path='/Singup' element={<Signup />}></Route>
+          <Route path='/Header' element={<Header />}></Route>
+          <Route path='/Login' element={<Login />}></Route>
+          <Route path='/Slider' element={<Slider />}></Route>
+          <Route path='/Sliderimg' element={<Sliderimg />}></Route>
+          <Route path='/Createproduct' element={<Createproduct/>}></Route>
+          <Route path='/Product' element={<Product/>}></Route>
+          <Route path='/AddToCart' element={<AddToCart/>}></Route>
+          <Route path='/ProductDetails/:id' element={<ProductDetails/>}></Route>
+
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
