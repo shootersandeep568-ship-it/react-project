@@ -31,6 +31,7 @@ const ProductDetails = () => {
             <Toaster />
             <div className="productDetails">
                 {/* LEFT */}
+                <h1>Product Details</h1>
                 <div className="left">
                     <img
                         src={`data:image/;base64,${btoa(
