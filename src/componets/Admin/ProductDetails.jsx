@@ -30,6 +30,8 @@ const ProductDetails = () => {
   };
     return (
         <>
+      <Toaster />
+
             <div className="productDetails">
                 {/* LEFT */}
                 <div className="left">
