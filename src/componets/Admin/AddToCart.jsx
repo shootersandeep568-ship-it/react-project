@@ -49,7 +49,6 @@ const AddToCart = () => {
         });
     };
 
-
     return (
         <div className="cartPage">
             {/* LEFT */}
