@@ -14,15 +14,15 @@ const ProductDetails = () => {
         const finalData = filterData.find((item) => item._id === id)
         setApiData(finalData)
 
-        
+
     }
     useEffect(() => {
         getData();
     });
 
-      const CartPopUp = () => {
-    toast.success("Item Add to Cart");
-  };
+    const CartPopUp = () => {
+        toast.success("Item Add to Cart");
+    };
 
     async function AddToCart(id) {
         console.log(id)
@@ -32,6 +32,8 @@ const ProductDetails = () => {
     }
     return (
         <>
+            <Toaster />
+
             <div className="productDetails">
                 {/* LEFT */}
                 <div className="left">
@@ -41,7 +43,7 @@ const ProductDetails = () => {
                                 ...new Uint8Array(apiData?.image?.data?.data || "")
                             )
                         )}`}
-                    alt="images"/>
+                        alt="images" />
                     <div className="thumbs">
                     </div>
                     <div className="actions">
