@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
-
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -13,16 +11,10 @@ const ProductDetails = () => {
         let filterData = await getApiData.data.AllProduct
         const finalData = filterData.find((item) => item._id === id)
         setApiData(finalData)
-
-
     }
     useEffect(() => {
         getData();
     });
-
-    const CartPopUp = () => {
-        toast.success("Item Add to Cart");
-    };
 
     async function AddToCart(id) {
         console.log(id)
@@ -32,8 +24,6 @@ const ProductDetails = () => {
     }
     return (
         <>
-            <Toaster />
-
             <div className="productDetails">
                 {/* LEFT */}
                 <div className="left">
@@ -43,7 +33,7 @@ const ProductDetails = () => {
                                 ...new Uint8Array(apiData?.image?.data?.data || "")
                             )
                         )}`}
-                        alt="images" />
+                    alt="images"/>
                     <div className="thumbs">
                     </div>
                     <div className="actions">
