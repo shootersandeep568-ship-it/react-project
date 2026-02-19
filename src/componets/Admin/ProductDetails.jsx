@@ -2,13 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 
 
 const ProductDetails = () => {
     const { id } = useParams();
-  const Navigate = useNavigate();
+//   const Navigate = useNavigate();
 
     let [apiData, setApiData] = useState([]);
     console.log(apiData);
@@ -31,7 +31,7 @@ const ProductDetails = () => {
 
     const CartPopUp = () => {
         toast.success("Item Add to Cart");
-         Navigate("/AddToCart")
+        //  Navigate("/AddToCart")
     };
     return (
         <>
