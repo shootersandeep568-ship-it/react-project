@@ -59,14 +59,16 @@ function Sliderimg() {
 
     return (
         <>
-            <div className='sliderimg'>
+            <div className='sliderimg' >
                 {categorydata.map((item) => {
                     return (
                         <>
-                       
-                              <img src={item.categoryimg} alt="" />
-                             <p>{item.categoryname}</p>
-                         
+
+                            <div>
+                                <img src={item.categoryimg} alt="" />
+                                <p>{item.categoryname}</p>
+                            </div>
+
                         </>
                     )
                 })}

@@ -55,17 +55,17 @@ const AddToCart = () => {
             <div className="cartLeft">
                 <h3>My Cart ({cartapi.length})</h3>
                 {cartapi.map((item) => (
-                    <div className="cartItem" key={item.id}>
+                    <div className="cartItem" key={item.item.id}>
                         <img src={`data:image/;base64,${btoa(
                             String.fromCharCode(
-                                ...new Uint8Array(item?.image?.data?.data || "")
+                                ...new Uint8Array(item?.item?.image?.data?.data || "")
                             )
                         )}`} alt="" />
                         <div className="cartInfo">
-                            <h4>{item.title}</h4>
+                            <h4>{item.item.title}</h4>
                             <div className="price">
-                                ₹{item.price}
-                                <span>₹{item.mrp}</span>
+                                ₹{item.item.price}
+                                <span>₹{item.item.mrp}</span>
                             </div>
                             <div className="qty">
                                 <button onClick={() => decreaseQty(item.id)}>-</button>
