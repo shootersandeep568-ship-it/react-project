@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -22,6 +24,10 @@ const ProductDetails = () => {
             console.log(res);
         });
     }
+
+     const CartPopUp = () => {
+    toast.success("Item Add to Cart");
+  };
     return (
         <>
             <div className="productDetails">
@@ -37,7 +43,7 @@ const ProductDetails = () => {
                     <div className="thumbs">
                     </div>
                     <div className="actions">
-                        <button className="cartBtn" onClick={() => { AddToCart(apiData._id) }}>ADD TO CART</button>
+                        <button className="cartBtn" onClick={() => { AddToCart(apiData._id); CartPopUp(); }}>ADD TO CART</button>
                         <button className="buyBtn">BUY NOW</button>
                     </div>
                 </div>
