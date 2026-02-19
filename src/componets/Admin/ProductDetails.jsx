@@ -11,6 +11,8 @@ const ProductDetails = () => {
         let filterData = await getApiData.data.AllProduct
         const finalData = filterData.find((item) => item._id === id)
         setApiData(finalData)
+
+        
     }
     useEffect(() => {
         getData();
