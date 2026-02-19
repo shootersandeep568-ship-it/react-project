@@ -63,8 +63,10 @@ function Sliderimg() {
                 {categorydata.map((item) => {
                     return (
                         <>
-                            <img src={item.categoryimg} alt="" />
+                          <div style={{display:"flex"}}>
+                              <img src={item.categoryimg} alt="" />
                              <p>{item.categoryname}</p>
+                          </div>
                         </>
                     )
                 })}
