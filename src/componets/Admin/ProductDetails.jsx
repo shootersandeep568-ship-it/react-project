@@ -2,10 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+
 
 
 const ProductDetails = () => {
     const { id } = useParams();
+  const Navigate = useNavigate();
+
     let [apiData, setApiData] = useState([]);
     console.log(apiData);
     async function getData() {
@@ -25,12 +29,13 @@ const ProductDetails = () => {
         });
     }
 
-     const CartPopUp = () => {
-    toast.success("Item Add to Cart");
-  };
+    const CartPopUp = () => {
+        toast.success("Item Add to Cart");
+         Navigate("/AddToCart")
+    };
     return (
         <>
-      <Toaster />
+            <Toaster />
 
             <div className="productDetails">
                 {/* LEFT */}
@@ -41,7 +46,7 @@ const ProductDetails = () => {
                                 ...new Uint8Array(apiData?.image?.data?.data || "")
                             )
                         )}`}
-                    alt="images"/>
+                        alt="images" />
                     <div className="thumbs">
                     </div>
                     <div className="actions">
