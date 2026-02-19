@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -17,6 +19,10 @@ const ProductDetails = () => {
     useEffect(() => {
         getData();
     });
+
+      const CartPopUp = () => {
+    toast.success("Item Add to Cart");
+  };
 
     async function AddToCart(id) {
         console.log(id)
