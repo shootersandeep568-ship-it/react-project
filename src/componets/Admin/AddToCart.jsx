@@ -34,7 +34,7 @@ const AddToCart = () => {
     const [cartapi, setcartApi] = useState([]);
     console.log(cartapi);
     async function Addtocartt(e) {
-        await axios.get("http://localhost:8000/cart/getCart").then((res) => {
+        await axios.get("https://react-project-backemd.vercel.app/cart/getCart").then((res) => {
             setcartApi(res.data.data)
         });
     }
