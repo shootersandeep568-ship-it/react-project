@@ -287,6 +287,10 @@
   border: none;
 }
 
+.createform1 label{
+  padding: 10pz 10px;
+}
+
 .createform1 label {
   color: white;
 }
