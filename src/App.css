@@ -282,23 +282,21 @@
 .createform1 input {
   width: 50%;
   margin: 10px 10px;
-  padding: 10px 0px;
+  padding: 10px 15px;
   border-radius: 30px;
   border: none;
 }
 
-.createform1 label{
-  padding: 10pz 10px;
-}
+
 
 .createform1 label {
   color: white;
 }
 
 .createform1 select {
-  width: 50%;
+  width: 54%;
   margin: 10px 10px;
-  padding: 10px 0px;
+  padding: 10px 15px;
   border-radius: 30px;
   border: none;
 }
@@ -306,7 +304,7 @@
 .createform1 .imgfile {
   width: 50%;
   margin: 10px 10px;
-  padding: 10px 0px;
+  padding: 10px 15px;
   border-radius: 30px;
   border: none;
   background-color: white;
