@@ -64,7 +64,7 @@ function Sliderimg() {
                     return (
                         <>
 
-                            <div>
+                            <div className='slider2'>
                                 <img src={item.categoryimg} alt="" />
                                 <p>{item.categoryname}</p>
                             </div>
