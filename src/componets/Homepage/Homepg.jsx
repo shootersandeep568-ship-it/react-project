@@ -5,6 +5,7 @@ import Sliderimg from './Sliderimg'
 import Product from '../Admin/Product'
 import Footer from '../Admin/Footer'
 import About from '../utility/About'
+import Blogs from '../utility/Blogs'
 
 function Homepg() {
     return (
@@ -14,6 +15,7 @@ function Homepg() {
             <Slider />
             <Product/>
             <About/>
+            <Blogs/>
             <Footer/>
           
         </>

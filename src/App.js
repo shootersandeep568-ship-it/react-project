@@ -10,6 +10,7 @@ import Createproduct from './componets/Admin/Createproduct';
 import Product from './componets/Admin/Product';
 import AddToCart from './componets/Admin/AddToCart';
 import ProductDetails from './componets/Admin/ProductDetails';
+import Blogs from './componets/utility/Blogs';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/Product' element={<Product/>}></Route>
           <Route path='/AddToCart' element={<AddToCart/>}></Route>
           <Route path='/ProductDetails/:id' element={<ProductDetails/>}></Route>
+          <Route path='/Blogs' element={<Blogs/>}></Route>
 
         </Routes>
       </BrowserRouter>
