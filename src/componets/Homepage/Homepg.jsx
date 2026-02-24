@@ -7,17 +7,19 @@ import Footer from '../Admin/Footer'
 import About from '../utility/About'
 import Blogs from '../utility/Blogs'
 
+
 function Homepg() {
     return (
         <>
             <Header />
             <Sliderimg />
             <Slider />
-            <Product/>
-            <About/>
-            <Blogs/>
-            <Footer/>
-          
+            <Product />
+            <About />
+            <Blogs />
+            <Footer />
+
+
         </>
     )
 }

@@ -11,6 +11,7 @@ import Product from './componets/Admin/Product';
 import AddToCart from './componets/Admin/AddToCart';
 import ProductDetails from './componets/Admin/ProductDetails';
 import Blogs from './componets/utility/Blogs';
+import SliderDaata from './componets/Homepage/SliderDaata';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/AddToCart' element={<AddToCart/>}></Route>
           <Route path='/ProductDetails/:id' element={<ProductDetails/>}></Route>
           <Route path='/Blogs' element={<Blogs/>}></Route>
+          <Route path='/SliderDaata' element={<SliderDaata/>}></Route>
 
         </Routes>
       </BrowserRouter>
