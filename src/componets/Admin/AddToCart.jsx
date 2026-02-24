@@ -3,18 +3,7 @@ import axios from "axios";
 
 
 const AddToCart = () => {
-    const [cartItems, setCartItems] = useState([
-    ]);
-
-    const totalPrice = cartItems.reduce(
-        (total, item) => total + item.price * item.qty,
-        0
-    );
-    const totalMrp = cartItems.reduce(
-        (total, item) => total + item.mrp * item.qty,
-        0
-    );
-
+   
     // =================================================================================================================
     const [cartapi, setcartApi] = useState([]);
     console.log(cartapi);
@@ -112,11 +101,9 @@ const AddToCart = () => {
                 <h3>PRICE DETAILS</h3>
                 <div className="priceRow">
                     <span>Price ({cartapi.length} items)</span>
-                    <span>₹{totalMrp}</span>
                 </div>
                 <div className="priceRow">
                     <span>Discount</span>
-                    <span className="green">-₹{totalMrp - totalPrice}</span>
                 </div>
                 <div className="priceRow">
                     <span>Delivery Charges</span>
@@ -125,10 +112,8 @@ const AddToCart = () => {
                 <hr />
                 <div className="priceRow total">
                     <span>Total Amount</span>
-                    <span>₹{totalPrice}</span>
                 </div>
                 <p className="save">
-                    You will save ₹{totalMrp - totalPrice} on this order
                 </p>
                 <button className="placeOrder">PLACE ORDER</button>
             </div>
