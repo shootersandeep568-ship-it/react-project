@@ -1,57 +1,78 @@
 import React, { useState } from 'react'
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Header from './Header';
 
-
-// ================================ datasave =====================================================
 function Login() {
-  const Navigate = useNavigate();
-  let [alldata, setalldata] = useState()
-  console.log("alldata", alldata)
+
+  const navigate = useNavigate();
+  const [alldata, setalldata] = useState({});
+
   function getalldata(e) {
     setalldata({
       ...alldata,
       [e.target.name]: e.target.value
-    })
+    });
   }
-  // ===============================================================================================
-  // ============================= submit handal  ==================================================
+
   async function handleSubmit(e) {
-    e.preventDefault()
-    await axios.post("http://localhost:8000/Product/Login", alldata).then((res) => {
-      console.log(res)
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:8000/Product/Login", alldata);
+
       if (res.data.status) {
-        toast.success("Successs");
+        toast.success("Login Successful");
         setTimeout(() => {
-          Navigate("/")
-        }, 3000);
+          navigate("/");
+        }, 2000);
+      } else {
+        toast.error("Something went wrong");
       }
-      else {
-        toast.error("Smothing wrong");
-      }
-    })
+
+    } catch (error) {
+      toast.error("Server Error");
+    }
   }
-  // ====================================================================================================
-  // ====================================================================================================
+
   return (
     <>
       <Toaster />
       <Header />
+
       <div className='login'>
-        <div className='login1'>
+        <div className='loginCard'>
           <h2>Login</h2>
-          <form className='ff1' action="" onSubmit={handleSubmit}>
-            <label htmlFor=""></label>
-            <input type="text" name="Emailid" id="Emailid" onChange={getalldata} placeholder='Emailid' /><br></br>
-            <input type="text" name="password" id="password" onChange={getalldata} placeholder='password' /><br></br>
-            <button type='submit'>Submit</button>
-            <p>Don't have an account <span style={{ color: "blue" }}>sign up</span></p>
+
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="Emailid"
+              placeholder='Enter Email'
+              onChange={getalldata}
+              required
+            />
+
+            <input
+              type="password"
+              name="password"
+              placeholder='Enter Password'
+              onChange={getalldata}
+              required
+            />
+
+            <button type='submit'>Login</button>
+
+            <p>
+              Don't have an account?{" "}
+              <Link to="/signup">Sign Up</Link>
+            </p>
+
           </form>
         </div>
       </div>
     </>
   )
 }
+
 export default Login

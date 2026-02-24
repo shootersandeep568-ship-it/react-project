@@ -4,62 +4,64 @@ import axios from "axios";
 import Header from '../utility/Header';
 
 function Createproduct() {
-    let [Createproductdata, setCreateproduct] = useState()
-    console.log(Createproductdata)
+
+    const [Createproductdata, setCreateproduct] = useState({});
     const [productImg, setProductImg] = useState();
-    console.log(productImg);
+
     function getCreateproductdata(e) {
         setCreateproduct({
             ...Createproductdata,
             [e.target.name]: e.target.value
         })
     }
+
     async function handleSubmit(e) {
-        e.preventDefault()
-        console.log(Createproductdata.title);
+        e.preventDefault();
+
         const fdata = new FormData();
         fdata.append("title", Createproductdata.title);
         fdata.append("description", Createproductdata.description);
         fdata.append("images", productImg);
-        fdata.append("reting", Createproductdata.reting)
-        fdata.append("price", Createproductdata.price)
-        fdata.append("category", Createproductdata.category)
-        fdata.append("pyandmy", Createproductdata.pyandmy)
+        fdata.append("reting", Createproductdata.reting);
+        fdata.append("price", Createproductdata.price);
+        fdata.append("category", Createproductdata.category);
+        fdata.append("pyandmy", Createproductdata.pyandmy);
 
-
-        await axios.post("http://localhost:8000/cart/Createproduct", fdata).then((res) => {
-            if (res.data.status) {
-                toast.success("Successs product");
-                setTimeout(() => {
-                }, 3000);
-            }
-            else {
-                toast.error("Smothing wrong");
-            }
-        })
+        await axios.post("http://localhost:8000/cart/Createproduct", fdata)
+            .then((res) => {
+                if (res.data.status) {
+                    toast.success("Success Product");
+                } else {
+                    toast.error("Something wrong");
+                }
+            })
     }
+
     return (
         <>
             <Toaster />
             <Header />
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+
+            <div className="create-container">
                 <div className='createform'>
-                    <div style={{ textAlign: "center" }}>
-                        <h2 style={{ color: "white" }}>Add Product</h2>
-                    </div>
-                    <form action="" onSubmit={handleSubmit} enctype="multipart/form-data">
+                    <h2>Add Product</h2>
+
+                    <form onSubmit={handleSubmit} encType="multipart/form-data">
+
                         <div className='createform1'>
-                            <label htmlFor="">title</label>
-                            <input type="text" name="title" id="" onChange={getCreateproductdata} required />
+                            <label>Title</label>
+                            <input type="text" name="title" onChange={getCreateproductdata} required />
                         </div>
+
                         <div className='createform1'>
-                            <label htmlFor="">description</label>
-                            <input type="text" name="description" id="" onChange={getCreateproductdata} />
+                            <label>Description</label>
+                            <input type="text" name="description" onChange={getCreateproductdata} />
                         </div>
+
                         <div className='createform1'>
-                            <label htmlFor="">reting</label>
-                            <select name="reting" id="" onChange={getCreateproductdata} required>
-                                <option value="none">Select a option</option>
+                            <label>Rating</label>
+                            <select name="reting" onChange={getCreateproductdata} required>
+                                <option value="">Select rating</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -67,14 +69,16 @@ function Createproduct() {
                                 <option value="5">5</option>
                             </select>
                         </div>
+
                         <div className='createform1'>
-                            <label htmlFor="">price</label>
-                            <input type="text" name="price" id="" onChange={getCreateproductdata} required />
+                            <label>Price</label>
+                            <input type="number" name="price" onChange={getCreateproductdata} required />
                         </div>
+
                         <div className='createform1'>
-                            <label htmlFor="">category</label>
-                            <select name="category" id="" onChange={getCreateproductdata}>
-                                <option value="Selectctgy">Select Category</option>
+                            <label>Category</label>
+                            <select name="category" onChange={getCreateproductdata}>
+                                <option value="">Select Category</option>
                                 <option value="minutes">Minutes</option>
                                 <option value="mob">Mobiles & Tablets</option>
                                 <option value="fashion">Fashion</option>
@@ -84,17 +88,21 @@ function Createproduct() {
                                 <option value="beauty">Beauty, Food..</option>
                             </select>
                         </div>
+
                         <div className='createform1'>
-                            <label htmlFor="">Imges</label>
-                            <input className='imgfile' type="file" name="imges" id="" onChange={(e) => setProductImg(e.target.files[0])} />
+                            <label>Images</label>
+                            <input type="file" onChange={(e) => setProductImg(e.target.files[0])} />
                         </div>
+
                         <div className='createform1'>
-                            <label htmlFor="">Model Year/Production Year</label>
-                            <input type="text" name="pyandmy" id="" onChange={getCreateproductdata} required />
+                            <label>Model / Production Year</label>
+                            <input type="text" name="pyandmy" onChange={getCreateproductdata} required />
                         </div>
+
                         <div className='formbtn'>
-                            <button>Sumbet</button>
+                            <button type="submit">Submit</button>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -102,4 +110,4 @@ function Createproduct() {
     )
 }
 
-export default Createproduct
+export default Createproduct;

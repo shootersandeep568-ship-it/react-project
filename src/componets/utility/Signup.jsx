@@ -1,60 +1,88 @@
 import React, { useState } from 'react'
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from './Header';
 
-
-
-// ================================ datasave ============================================================
 function Signup() {
-  const Navigate = useNavigate();
-  let [alldata, setalldata] = useState()
-  console.log("alldata", alldata)
+
+  const navigate = useNavigate();
+  const [alldata, setalldata] = useState({});
+
   function getalldata(e) {
     setalldata({
       ...alldata,
       [e.target.name]: e.target.value
-    })
+    });
   }
-  // ============================= submit handal=============================================================
+
   async function handleSubmit(e) {
-    e.preventDefault()
-    await axios.post("http://localhost:8000/Product/signup", alldata).then((res) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:8000/Product/signup", alldata);
+
       if (res.data.status) {
-        toast.success("Successs");
+        toast.success("Signup Successful");
         setTimeout(() => {
-          Navigate("/Login")
-        }, 3000);
+          navigate("/Login");
+        }, 2000);
+      } else {
+        toast.error("Something went wrong");
       }
-      else {
-        toast.error("Smothing wrong");
-      }
-    })
+
+    } catch (error) {
+      toast.error("Server Error");
+    }
   }
-  // =============================================================================================
-  // ==============================================================================================
+
   return (
     <>
       <Toaster />
       <Header />
+
       <div className='signup'>
-        <div className='signup1'>
-          <h2>Sign Up</h2>
-          <form className='ff' action="" onSubmit={handleSubmit}>
-            <label htmlFor=""> Username</label><br></br>
-            <input type="text" name='username' id='' onChange={getalldata} /><br></br>
-            <label htmlFor="">Email</label><br></br>
-            <input type="text" name="email" id="" onChange={getalldata} /><br></br>
-            <label htmlFor="">Password</label><br></br>
-            <input type="text" name="password" id="" onChange={getalldata} /><br></br>
-            <button type='submit'>Submit</button>
-            <p>Already have an account? <span style={{ color: "red" }}></span><Link style={{ color: "blue" }} to={"/Login"}>login</Link></p>
+        <div className='signupCard'>
+
+          <h2>Create Account</h2>
+
+          <form onSubmit={handleSubmit}>
+
+            <input
+              type="text"
+              name='username'
+              placeholder='Enter Username'
+              onChange={getalldata}
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder='Enter Email'
+              onChange={getalldata}
+              required
+            />
+
+            <input
+              type="password"
+              name="password"
+              placeholder='Enter Password'
+              onChange={getalldata}
+              required
+            />
+
+            <button type='submit'>Sign Up</button>
+
+            <p>
+              Already have an account? <Link to="/Login">Login</Link>
+            </p>
+
           </form>
+
         </div>
       </div>
     </>
   )
 }
-export default Signup
+
+export default Signup;
