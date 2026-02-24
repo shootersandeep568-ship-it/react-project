@@ -10,12 +10,12 @@ function SliderDaata() {
                         <img src={imges9} alt="product" className="card-img" />
 
                         <div className="card-body">
-                            <h3 className="title">{item.title}</h3>
-                            <p className="desc">{item.description}</p>
-                            <p className="category">{item.category}</p>
+                            <h3 className="title">title. {item.title}</h3>
+                            <p className="desc">description. {item.description}</p>
+                            <p className="category">category. {item.category}</p>
 
                             <div className="price-section">
-                                <span className="price">₹{item.price}</span>
+                                <span className="price">price. ₹{item.price}</span>
                             </div>
 
                             <button className="btn">Add To Cart</button>
