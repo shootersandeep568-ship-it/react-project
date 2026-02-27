@@ -1,30 +1,43 @@
-import { minut } from "./SliderData";
+import { categorydata } from "./SliderData";
 import imges9 from "../imges/s1.webp";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function SliderDaata() {
-    return (
-        <div className="slider-container">
-            {minut.map((item, index) => {
-                return (
-                    <div className="card" key={index}>
-                        <img src={imges9} alt="product" className="card-img" />
 
-                        <div className="card-body">
-                            <h3 className="title">title. {item.title}</h3>
-                            <p className="desc">description. {item.description}</p>
-                            <p className="category">category. {item.category}</p>
+  const { category } = useParams();
+  const [filterCategory, setFilterCategory] = useState([]);
 
-                            <div className="price-section">
-                                <span className="price">price. ₹{item.price}</span>
-                            </div>
-
-                            <button className="btn">Add To Cart</button>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
+  useEffect(() => {
+    const filterData = categorydata.filter(
+      (item) => item.category === category
     );
+    setFilterCategory(filterData);
+  }, [category]);
+
+  return (
+    <div className="slider-container">
+      {filterCategory.map((item) => (
+        <div className="card" key={item.id}>
+          <div className="image-wrapper">
+            <img src={item?.image} alt={item.title} />
+          </div>
+
+          <div className="card-body">
+            <h3 className="title">{item.title}</h3>
+            <p className="desc">{item.description}</p>
+            <p className="category">{item.category}</p>
+
+            <div className="price-section">
+              <span className="price">₹{item.price}</span>
+            </div>
+
+            <button className="btn">Add To Cart</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default SliderDaata;

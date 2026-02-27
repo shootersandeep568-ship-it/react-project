@@ -30,6 +30,7 @@ const Header = () => {
             {/* Right */}
             <div className="header__right">
                 <button className="loginBtn"> <Link to={"/Login"}>Login</Link></button>
+                <button className="loginBtn"> <Link to={"/admin/Allproduct"}>Allproducts</Link></button>
                 <span className="seller"> <Link to={"/Createproduct"}>Create Product</Link></span>
                 <span className="cart" ><FaShoppingCart /> <Link style={{ color: "white" }} to={"/AddToCart"}>Cart</Link></span>
             </div>

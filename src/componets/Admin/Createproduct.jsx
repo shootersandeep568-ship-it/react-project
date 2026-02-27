@@ -4,20 +4,16 @@ import axios from "axios";
 import Header from '../utility/Header';
 
 function Createproduct() {
-
     const [Createproductdata, setCreateproduct] = useState({});
     const [productImg, setProductImg] = useState();
-
     function getCreateproductdata(e) {
         setCreateproduct({
             ...Createproductdata,
             [e.target.name]: e.target.value
         })
     }
-
     async function handleSubmit(e) {
         e.preventDefault();
-
         const fdata = new FormData();
         fdata.append("title", Createproductdata.title);
         fdata.append("description", Createproductdata.description);
@@ -26,7 +22,6 @@ function Createproduct() {
         fdata.append("price", Createproductdata.price);
         fdata.append("category", Createproductdata.category);
         fdata.append("pyandmy", Createproductdata.pyandmy);
-
         await axios.post("http://localhost:8000/cart/Createproduct", fdata)
             .then((res) => {
                 if (res.data.status) {
@@ -41,23 +36,18 @@ function Createproduct() {
         <>
             <Toaster />
             <Header />
-
             <div className="create-container">
                 <div className='createform'>
                     <h2>Add Product</h2>
-
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
-
                         <div className='createform1'>
                             <label>Title</label>
                             <input type="text" name="title" onChange={getCreateproductdata} required />
                         </div>
-
                         <div className='createform1'>
                             <label>Description</label>
                             <input type="text" name="description" onChange={getCreateproductdata} />
                         </div>
-
                         <div className='createform1'>
                             <label>Rating</label>
                             <select name="reting" onChange={getCreateproductdata} required>
