@@ -12,7 +12,7 @@ function Product() {
 
     useEffect(() => {
         getProduct();
-    }, []);
+    });
 
     return (
         <div className="products">

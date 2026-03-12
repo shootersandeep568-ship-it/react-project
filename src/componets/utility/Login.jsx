@@ -18,28 +18,31 @@ function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    try {
-      const res = await axios.post("http://localhost:8000/Product/Login", alldata);
-
-      if (res.data.status) {
-        toast.success("Login Successful");
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
-      } else {
-        toast.error("Something went wrong");
-      }
-
-    } catch (error) {
-      toast.error("Server Error");
-    }
+    const data = await axios
+      .post("http://localhost:8000/Product/Login", alldata)
+      .then((res) => {
+        console.log(res)
+        if (res.data.status === false) {
+          toast.error(res.data.message);
+        } else if (res.data.status === true) {
+          toast.success(`Welcome ${res.data.user.name}`);
+          localStorage.setItem("token", res.data.token);
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        } else {
+          toast.error("Something went wrong!....");
+        }
+      })
+      .catch((err) => {
+        console.log("error in fetching data for login", err);
+      });
   }
 
   return (
     <>
       <Toaster />
       <Header />
-
       <div className='login'>
         <div className='loginCard'>
           <h2>Login</h2>
@@ -65,7 +68,7 @@ function Login() {
 
             <p>
               Don't have an account?{" "}
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/Singup">Sign Up</Link>
             </p>
 
           </form>

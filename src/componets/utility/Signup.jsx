@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from './Header';
 
 function Signup() {
-
   const navigate = useNavigate();
   const [alldata, setalldata] = useState({});
 
@@ -15,12 +14,11 @@ function Signup() {
       [e.target.name]: e.target.value
     });
   }
-
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:8000/Product/signup", alldata);
-
+      console.log(res)
       if (res.data.status) {
         toast.success("Signup Successful");
         setTimeout(() => {
@@ -39,7 +37,6 @@ function Signup() {
     <>
       <Toaster />
       <Header />
-
       <div className='signup'>
         <div className='signupCard'>
 

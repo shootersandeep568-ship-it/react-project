@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const ProductDetails = () => {
     const { id } = useParams();
-//   const Navigate = useNavigate();
+    //   const Navigate = useNavigate();
 
     let [apiData, setApiData] = useState([]);
     console.log(apiData);

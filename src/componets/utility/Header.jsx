@@ -9,9 +9,9 @@ const Header = () => {
             {/* Left */}
             <div className="header__left">
                 <img
-                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/flipkart-logo-39906.svg"
-                    alt="Flipkart"
-                    className="logo"
+                    // src=""
+                    // alt="Flipkart"
+                    // className="logo"
                 />
                 <span className="explore">
                     Explore <span>Plus</span>
