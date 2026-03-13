@@ -1,5 +1,4 @@
 import { categorydata } from "./SliderData";
-import imges9 from "../imges/s1.webp";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -31,7 +30,6 @@ function SliderDaata() {
             <div className="price-section">
               <span className="price">₹{item.price}</span>
             </div>
-
             <button className="btn">Add To Cart</button>
           </div>
         </div>

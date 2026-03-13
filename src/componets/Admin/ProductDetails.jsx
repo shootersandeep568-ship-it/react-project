@@ -31,7 +31,6 @@ const ProductDetails = () => {
 
     const CartPopUp = () => {
         toast.success("Add to Cart");
-        //  Navigate("/AddToCart")
     };
     return (
         <>

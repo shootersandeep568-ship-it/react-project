@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Product() {
     const [api, setApi] = useState([]);
+    console.log(api)
 
     async function getProduct() {
         const res = await axios.get("https://react-project-backemd.vercel.app/Cart/Productapi");
@@ -12,14 +13,13 @@ function Product() {
 
     useEffect(() => {
         getProduct();
-    });
+    }, []);
 
     return (
         <div className="products">
             {api.map((item) => (
                 <div className="products1" key={item._id}>
                     <Link to={`/ProductDetails/${item._id}`} className="product-link">
-
                         <div className="img-wrapper">
                             <img
                                 src={`data:image/;base64,${btoa(
@@ -33,9 +33,7 @@ function Product() {
 
                         <h3 className="title">{item.title}</h3>
                         <p className="desc">{item.description}</p>
-
                         <p className="reting1">⭐ {item.reting}</p>
-
                         <div className="price">
                             <span className="sellPrice">₹{item.price}</span>
                             <span className="mrp">{item.category}</span>
