@@ -20,7 +20,7 @@ const ProductDetails = () => {
     }
     useEffect(() => {
         getData();
-    });
+    }, []);
 
     async function AddToCart(id) {
         console.log(id)

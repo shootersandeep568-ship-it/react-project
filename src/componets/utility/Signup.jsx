@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Header from './Header';
+import Listings from '../Admin/Auth/Listing';
 
 function Signup() {
   const navigate = useNavigate();
@@ -17,8 +18,8 @@ function Signup() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/Product/signup", alldata);
-      console.log(res)
+      const mainsingup = new Listings()
+      const res = await mainsingup.Singup(alldata)
       if (res.data.status) {
         toast.success("Signup Successful");
         setTimeout(() => {
@@ -39,9 +40,7 @@ function Signup() {
       <Header />
       <div className='signup'>
         <div className='signupCard'>
-
           <h2>Create Account</h2>
-
           <form onSubmit={handleSubmit}>
 
             <input

@@ -22,7 +22,7 @@ function Createproduct() {
         fdata.append("price", Createproductdata.price);
         fdata.append("category", Createproductdata.category);
         fdata.append("pyandmy", Createproductdata.pyandmy);
-        await axios.post("https://react-project-backemd.vercel.app/cart/Createproduct", fdata)
+        await axios.post("http://localhost:8000/cart/Createproduct", fdata)
             .then((res) => {
                 if (res.data.status) {
                     toast.success("Success Product");

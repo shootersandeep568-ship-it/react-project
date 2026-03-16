@@ -7,7 +7,8 @@ function Product() {
     console.log(api)
 
     async function getProduct() {
-        const res = await axios.get("https://react-project-backemd.vercel.app/Cart/Productapi");
+        const res = await axios.get("http://localhost:8000/cart/Productapi");
+        // const res = await axios.get("https://react-project-backemd.vercel.app/Cart/Productapi");
         setApi(res.data.AllProduct);
     }
 
@@ -18,7 +19,7 @@ function Product() {
     return (
         <div>
             <div className="Mypro">
-                <h2><span style={{color:"blue"}}>M</span>y<span style={{color:"blue"}}>P</span>roducts..</h2>
+                <h2><span style={{ color: "blue" }}>M</span>y<span style={{ color: "blue" }}>P</span>roducts..</h2>
             </div>
             <div className="products">
                 {api.map((item) => (

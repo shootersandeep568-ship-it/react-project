@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import Header from './Header';
+import Listings from '../Admin/Auth/Listing';
 
 function Login() {
 
@@ -18,22 +19,23 @@ function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const data = await axios
-      .post("http://localhost:8000/Product/Login", alldata)
-      .then((res) => {
-        console.log(res)
-        if (res.data.status === false) {
-          toast.error(res.data.message);
-        } else if (res.data.status === true) {
-          toast.success(`Welcome ${res.data.user.name}`);
-          localStorage.setItem("token", res.data.token);
-          setTimeout(() => {
-            navigate("/");
-          }, 1000);
-        } else {
-          toast.error("Something went wrong!....");
-        }
-      })
+
+    const main = new Listings()
+    const res =  main.login(alldata)
+    res.then((res) => {
+      console.log(res)
+      if (res.data.status === false) {
+        toast.error(res.data.message);
+      } else if (res.data.status === true) {
+        toast.success(`Welcome ${res.data.user.name}`);
+        localStorage.setItem("token", res.data.token);
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      } else {
+        toast.error("Something went wrong!....");
+      }
+    })
       .catch((err) => {
         console.log("error in fetching data for login", err);
       });
