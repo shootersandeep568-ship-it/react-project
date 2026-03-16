@@ -18,7 +18,7 @@ const AddToCart = () => {
 
     const removeItem = (id) => {
         console.log(id)
-        axios.post(`http://localhost:8000/cart/deleteCartItem/${id}`).then((res) => {
+        axios.post(`https://react-project-backemd.vercel.app/cart/deleteCartItem/${id}`).then((res) => {
             console.log(res);
         });
     };
@@ -51,9 +51,6 @@ const AddToCart = () => {
             }
         }
         // ==========================================================================================================
-
-
-
         return (
             <>
                 <div className="cartItem" key={item.item._id}>

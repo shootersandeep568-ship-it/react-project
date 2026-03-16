@@ -16,33 +16,38 @@ function Product() {
     }, []);
 
     return (
-        <div className="products">
-            {api.map((item) => (
-                <div className="products1" key={item._id}>
-                    <Link to={`/ProductDetails/${item._id}`} className="product-link">
-                        <div className="img-wrapper">
-                            <img
-                                src={`data:image/;base64,${btoa(
-                                    String.fromCharCode(
-                                        ...new Uint8Array(item?.image?.data?.data || "")
-                                    )
-                                )}`}
-                                alt={item.title}
-                            />
-                        </div>
+        <div>
+            <div className="Mypro">
+                <h2><span style={{color:"blue"}}>M</span>y<span style={{color:"blue"}}>P</span>roducts..</h2>
+            </div>
+            <div className="products">
+                {api.map((item) => (
+                    <div className="products1" key={item._id}>
+                        <Link to={`/ProductDetails/${item._id}`} className="product-link">
+                            <div className="img-wrapper">
+                                <img
+                                    src={`data:image/;base64,${btoa(
+                                        String.fromCharCode(
+                                            ...new Uint8Array(item?.image?.data?.data || "")
+                                        )
+                                    )}`}
+                                    alt={item.title}
+                                />
+                            </div>
 
-                        <h3 className="title">{item.title}</h3>
-                        <p className="desc">{item.description}</p>
-                        <p className="reting1">⭐ {item.reting}</p>
-                        <div className="price">
-                            <span className="sellPrice">₹{item.price}</span>
-                            <span className="mrp">{item.category}</span>
-                            <span className="discount">{item.pyandmy}</span>
-                        </div>
+                            <h3 className="title">{item.title}</h3>
+                            <p className="desc">{item.description}</p>
+                            <p className="reting1">⭐ {item.reting}</p>
+                            <div className="price">
+                                <span className="sellPrice">₹{item.price}</span>
+                                <span className="mrp">{item.category}</span>
+                                <span className="discount">{item.pyandmy}</span>
+                            </div>
 
-                    </Link>
-                </div>
-            ))}
+                        </Link>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

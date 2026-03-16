@@ -8,7 +8,7 @@ function AllProducts() {
   async function handleSubmit() {
     try {
       const res = await axios.get(
-        "http://localhost:8000/cart/Productapi"
+        "https://react-project-backemd.vercel.app/cart/Productapi"
       );
       setApi(res.data.AllProduct);
     } catch (error) {
@@ -23,7 +23,7 @@ function AllProducts() {
   const updateData = async (id, updatedItem) => {
     try {
       await axios.post(
-        `http://localhost:8000/cart/updateData/${id}`,
+        `https://react-project-backemd.vercel.app/cart/updateData/${id}`,
         updatedItem
       );
       alert("Product Updated Successfully");
@@ -32,6 +32,15 @@ function AllProducts() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+
+
+  const deleteallproduct = (id) => {
+    console.log(id)
+    axios.post(`https://react-project-backemd.vercel.app/cart/deleteallproduct/${id}`).then((res) => {
+      console.log(res);
+    });
   };
 
   return (
@@ -66,7 +75,7 @@ function AllProducts() {
                       >
                         Update
                       </button>
-                      <button className="delete-btn">
+                      <button className="delete-btn" onClick={() => deleteallproduct(item._id)} >
                         Delete
                       </button>
                     </td>
