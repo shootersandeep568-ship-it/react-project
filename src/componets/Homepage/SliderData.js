@@ -1,4 +1,3 @@
-import { ImGift } from "react-icons/im"
 
 const categorydata = [
     {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import toast, { Toaster } from "react-hot-toast";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Header from './Header';
 import Listings from '../Admin/Auth/Listing';
