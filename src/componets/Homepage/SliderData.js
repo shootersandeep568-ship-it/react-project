@@ -27,7 +27,7 @@ const categorydata = [
         selectsize: "xl",
         category: "fashion",
         image: "https://media.istockphoto.com/id/854321536/photo/look-at-this-gorgeous-dress.jpg?s=1024x1024&w=is&k=20&c=Tl4ClVJEvyU3lO1iGzQT11t5N2nrBPKIBYLAkqWzAqg="
-    }, ,
+    },
     {
         id: 4,
         title: "fashion",
@@ -36,7 +36,7 @@ const categorydata = [
         selectsize: "xl",
         category: "fashion",
         image: "https://media.istockphoto.com/id/1175412224/photo/woman-buying-clothes-at-department-store-stock-photo.jpg?s=1024x1024&w=is&k=20&c=9qn5h2M0jlKZ-DojAe45H5XQKAUBrfAfr5D7v-CLUTI="
-    }, ,
+    }, 
     {
         id: 5,
         title: "fashion",
@@ -211,7 +211,7 @@ const categorydata = [
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
     },
-    , {
+     {
         id: 24,
         title: "mobile",
         description: "createdescription",
@@ -229,7 +229,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 26,
         title: "mobile",
         description: "createdescription",
@@ -238,7 +238,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 27,
         title: "mobile",
         description: "createdescription",
@@ -247,7 +247,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 28,
         title: "mobile",
         description: "createdescription",
@@ -256,7 +256,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 29,
         title: "mobile",
         description: "createdescription",
@@ -265,7 +265,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 30,
         title: "mobile",
         description: "createdescription",
@@ -274,7 +274,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 31,
         title: "mobile",
         description: "createdescription",
@@ -283,7 +283,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 32,
         title: "mobile",
         description: "createdescription",
@@ -292,7 +292,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 33,
         title: "mobile",
         description: "createdescription",
@@ -301,7 +301,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 34,
         title: "mobile",
         description: "createdescription",
@@ -310,7 +310,7 @@ const categorydata = [
         category: "mobile",
         image: "https://images.unsplash.com/photo-1706372124839-f35d821ccd24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
 
-    }, , {
+    },  {
         id: 35,
         title: "mobile",
         description: "createdescription",
@@ -536,7 +536,7 @@ const categorydata = [
         category: "Electronics",
         image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=1201&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-    , {
+    {
         id: 63,
         title: "Electronics",
         description: "createdescription",
