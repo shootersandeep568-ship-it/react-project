@@ -12,7 +12,7 @@ import imges8 from '../imges/img8.webp'
 function Sliderimg() {
 
     const categorydata = [
-        { id: 1, categoryname: "Minutes", categoryimg: imges1, category: "minutes" },
+        { id: 1, categoryname: "Minutesss", categoryimg: imges1, category: "minutes" },
         { id: 2, categoryname: "Mobiles & Tablets", categoryimg: imges2, category: "mobile" },
         { id: 3, categoryname: "Fashion", categoryimg: imges3, category: "fashion" },
         { id: 4, categoryname: "Electronics", categoryimg: imges4, category: "Electronics" },

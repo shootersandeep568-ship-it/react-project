@@ -9,9 +9,9 @@ const Header = () => {
             {/* Left */}
             <div className="header__left">
                 <img
-                    // src=""
-                    // alt="Flipkart"
-                    // className="logo"
+                    src=""
+                    alt="Flipkart"
+                    className="logo"
                 />
                 <span className="explore">
                     Explore <span>Plus</span>
