@@ -20,7 +20,8 @@ function Login() {
     e.preventDefault();
 
     const main = new Listings()
-    const res =  main.login(alldata)
+    const res = main.login(alldata)
+    
     res.then((res) => {
       console.log(res)
       if (res.data.status === false) {

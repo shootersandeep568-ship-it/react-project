@@ -33,7 +33,6 @@ function App() {
           <Route path='/Blogs' element={<Blogs />}></Route>
           <Route path='/SliderDaata/:category' element={<SliderDaata />}></Route>
           <Route path="/admin/Allproduct" element={<AllProducts />} />
-
         </Routes>
       </BrowserRouter>
     </div>

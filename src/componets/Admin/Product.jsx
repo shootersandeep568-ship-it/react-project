@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
+// import Listings from '../Admin/Auth/Listing'
+import axios from "axios";
+
 
 function Product() {
     const [api, setApi] = useState([]);
     console.log(api)
 
     async function getProduct() {
+    
+        // const newproduct = new Listings()
+        // const res = newproduct.product()
+        // console.log(res)
+
         const res = await axios.get("https://react-project-backemd.vercel.app/cart/Productapi");
         setApi(res.data.AllProduct);
     }
