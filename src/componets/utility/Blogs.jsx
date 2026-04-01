@@ -2,52 +2,46 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="infoContainer">
+    <div className="spooky-blog-container">
 
-      <h1>Flipkart: India's Ultimate One-Stop Online Shopping Destination</h1>
+      <h1 className="spooky-title">
+        Flipkart: India's Ultimate One-Stop Online Shopping Destination
+      </h1>
 
-      <p>
+      <p className="spooky-text">
         Welcome to Flipkart, India's trusted and beloved e-commerce platform,
         revolutionising online shopping since 2007. With over 200 million users
         and 150 million+ products across 80+ categories, Flipkart offers
         convenience, value, and reliability at every click.
       </p>
 
-      <h2>What Can You Buy from Flipkart?
-          Welcome to Flipkart, India's trusted and beloved e-commerce platform,
-        revolutionising online shopping since 2007. With over 200 million users
-        and 150 million+ products across 80+ categories, Flipkart offers
-        convenience, value, and reliability at every click.
+      <h2 className="spooky-subtitle">
+        What Can You Buy from Flipkart?
       </h2>
 
       {/* Section 1 */}
-      <section>
+      <section className="spooky-section">
         <h3>Mobile and Electronics</h3>
         <p>
           Explore latest <a href="/">Samsung</a>, <a href="/">Apple</a>,
           <a href="/">OnePlus</a>, <a href="/">Vivo</a> smartphones and more.
           Shop <a href="/">5G Mobiles</a>, <a href="/">Gaming Phones</a>,
-          <a href="/">Budget Phone  Discover <a href="/">Smart TVs</a>, <a href="/">Air Conditioners</a>,
-          <a href="/">Refrigerators</a>, <a href="/">Washing Machines</a>,
-          <a href="/">Microwaves</a>, and more. Discover <a href="/">Smart TVs</a>, <a href="/">Air Conditioners</a>,
-          <a href="/">Refrigerators</a>, <a href="/">Washing Machines</a>,
-          <a href="/">Microwaves</a>, and more.v
-          </a>.
+          <a href="/">Budget Phones</a>.
         </p>
       </section>
 
       {/* Section 2 */}
-      <section>
+      <section className="spooky-section">
         <h3>Home and Kitchen Appliances</h3>
         <p>
           Discover <a href="/">Smart TVs</a>, <a href="/">Air Conditioners</a>,
           <a href="/">Refrigerators</a>, <a href="/">Washing Machines</a>,
-          <a href="/">Microwaves </a>, and more.
+          <a href="/">Microwaves</a>, and more.
         </p>
       </section>
 
       {/* Section 3 */}
-      <section>
+      <section className="spooky-section">
         <h3>Fashion and Beauty</h3>
         <p>
           Shop <a href="/">Men's Clothing</a>,
@@ -60,22 +54,14 @@ const Blogs = () => {
       </section>
 
       {/* Section 4 */}
-      <section>
+      <section className="spooky-section">
         <h3>Home and Furniture</h3>
         <p>
-             Discover <a href="/">Smart TVs</a>, <a href="/">Air Conditioners</a>,
-          <a href="/">Refrigerators</a>, <a href="/">Washing Machines</a>,
-          <a href="/">Microwaves </a>, and more.
           Find <a href="/">Beds</a>,
           <a href="/">Sofa Sets</a>,
           <a href="/">Dining Tables</a>,
           <a href="/">Wardrobes</a>,
           <a href="/">Office Chairs</a>.
-           Discover <a href="/">Smart TVs</a>, <a href="/">Air Conditioners</a>,
-          <a href="/">Refrigerators</a>, <a href="/">Washing Machines</a>,
-          <a href="/">Microwaves </a>, and more. Discover <a href="/">Smart TVs</a>, <a href="/">Air Conditioners</a>,
-          <a href="/">Refrigerators</a>, <a href="/">Washing Machines</a>,
-          <a href="/">Microwaves </a>, and more.
         </p>
       </section>
 

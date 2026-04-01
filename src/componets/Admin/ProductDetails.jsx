@@ -10,7 +10,7 @@ const ProductDetails = () => {
     let [apiData, setApiData] = useState([]);
     console.log(apiData);
     async function getData() {
-        let getApiData = await axios.get("https://react-project-backemd.vercel.app/Cart/Productapi")
+        let getApiData = await axios.get("http://localhost:8000/Cart/Productapi")
         let filterData = await getApiData.data.AllProduct
         const finalData = filterData.find((item) => item._id === id)
         setApiData(finalData)
@@ -21,7 +21,7 @@ const ProductDetails = () => {
 
     async function AddToCart(id) {
         console.log(id)
-        await axios.post(`https://react-project-backemd.vercel.app/cart/addtocart/${id}`).then((res) => {
+        await axios.post(`http://localhost:8000/cart/addtocart/${id}`).then((res) => {
             console.log(res);
         });
     }

@@ -11,9 +11,9 @@ class Listings extends Component {
         return Api.post("Product/signup", alldata)
     }
 
-    async product(){
-        return Api.get("cart/Productapi")
-    }
+    // async product(){
+    //     return Api.get("cart/Productapi")
+    // }
 
     render() {
         return <></>;

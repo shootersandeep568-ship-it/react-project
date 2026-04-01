@@ -1,11 +1,10 @@
-/* @media only screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
 
     .slider2 p {
        padding: 10px 10px;
     }
 
-   
-} */
+}
 
 .header {
   display: flex;
@@ -183,189 +182,231 @@
 }
 
 /* =========================== login ====================================== */
-.login {
-  min-height: 90vh;
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: "Creepster", cursive;
+}
+
+/* Container */
+.spooky-login-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f3f6;
-  padding: 20px;
+  background: radial-gradient(circle, #0a0a0a, #000);
+  position: relative;
+  overflow: hidden;
 }
 
-.loginCard {
-  background: #fff;
-  width: 100%;
-  max-width: 400px;
-  padding: 40px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+/* Fog Effect */
+.fog {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  /* background: url("https://i.ibb.co/4f8hK9D/fog.png"); */
+  opacity: 0.15;
+  animation: fogMove 80s linear infinite;
 }
 
-.loginCard h2 {
+@keyframes fogMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* Card */
+.spooky-login-card {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 40px;
+  width: 320px;
+  border-radius: 15px;
   text-align: center;
-  margin-bottom: 25px;
-  color: #2874f0;
+  box-shadow: 0 0 30px crimson;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
 }
 
-.loginCard form {
-  display: flex;
-  flex-direction: column;
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
-.loginCard input {
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+/* Heading */
+.spooky-login-card h2 {
+  color: crimson;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px red;
+}
+
+/* Inputs */
+.spooky-login-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid crimson;
+  background: black;
+  color: white;
   outline: none;
   transition: 0.3s;
 }
 
-.loginCard input:focus {
-  border-color: #2874f0;
+.spooky-login-card input:focus {
+  box-shadow: 0 0 12px crimson;
 }
 
-.loginCard button {
-  padding: 12px;
-  background-color: #fb641b;
-  color: white;
+/* Button */
+.spooky-login-card button {
+  width: 107%;
+  padding: 10px;
+  margin-top: 10px;
+  background: crimson;
   border: none;
-  border-radius: 4px;
-  font-weight: 600;
+  border-radius: 8px;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.loginCard button:hover {
-  background-color: #e85c1a;
+.spooky-login-card button:hover {
+  background: darkred;
+  box-shadow: 0 0 20px red;
 }
 
-.loginCard p {
-  margin-top: 15px;
-  font-size: 14px;
-  text-align: center;
+/* Text */
+.spooky-login-card p {
+  margin-top: 12px;
+  color: #aaa;
 }
 
-.loginCard a {
-  color: #2874f0;
+.spooky-login-card a {
+  color: crimson;
   text-decoration: none;
-  font-weight: 500;
 }
 
-.loginCard a:hover {
-  text-decoration: underline;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .loginCard {
-    padding: 30px 20px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .loginCard {
-    padding: 25px 15px;
-  }
-
-  .loginCard h2 {
-    font-size: 20px;
-  }
+.spooky-login-card a:hover {
+  text-shadow: 0 0 10px red;
 }
 
 /* ====================== signup ======================================== */
-.signup {
-  min-height: 90vh;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Creepster", cursive;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* Background Fog Animation */
+.spooky-container {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f1f3f6;
-  padding: 20px;
+  background: radial-gradient(circle, #0f0f0f, #000);
+  position: relative;
 }
 
-.signupCard {
-  background: #fff;
-  width: 100%;
-  max-width: 420px;
-  padding: 40px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.fog {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  /* background: url("https://i.ibb.co/4f8hK9D/fog.png"); */
+  animation: moveFog 60s linear infinite;
+  opacity: 0.2;
 }
 
-.signupCard h2 {
+@keyframes moveFog {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Card */
+.spooky-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px red;
   text-align: center;
-  margin-bottom: 25px;
-  color: #2874f0;
+  width: 320px;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
 }
 
-.signupCard form {
-  display: flex;
-  flex-direction: column;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.signupCard input {
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+/* Title */
+.spooky-card h2 {
+  color: #ff2e2e;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px red;
+}
+
+/* Inputs */
+.spooky-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid red;
+  background: black;
+  color: white;
+  border-radius: 8px;
   outline: none;
   transition: 0.3s;
 }
 
-.signupCard input:focus {
-  border-color: #2874f0;
+.spooky-card input:focus {
+  box-shadow: 0 0 10px red;
 }
 
-.signupCard button {
-  padding: 12px;
-  background-color: #fb641b;
-  color: #fff;
+/* Button */
+.spooky-card button {
+  width: 107%;
+  padding: 10px;
+  margin-top: 10px;
+  background: red;
   border: none;
-  border-radius: 4px;
-  font-weight: 600;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.signupCard button:hover {
-  background-color: #e85c1a;
+.spooky-card button:hover {
+  background: darkred;
+  box-shadow: 0 0 15px red;
 }
 
-.signupCard p {
-  margin-top: 15px;
-  font-size: 14px;
-  text-align: center;
+/* Text */
+.spooky-card p {
+  color: #aaa;
+  margin-top: 10px;
 }
 
-.signupCard a {
-  color: #2874f0;
+.spooky-card a {
+  color: red;
   text-decoration: none;
-  font-weight: 500;
 }
 
-.signupCard a:hover {
-  text-decoration: underline;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .signupCard {
-    padding: 30px 20px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .signupCard {
-    padding: 25px 15px;
-  }
-
-  .signupCard h2 {
-    font-size: 20px;
-  }
+.spooky-card a:hover {
+  text-shadow: 0 0 10px red;
 }
 
 /* ================================ create form ========================================== */

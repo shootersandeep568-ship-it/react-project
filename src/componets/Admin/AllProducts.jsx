@@ -8,7 +8,7 @@ function AllProducts() {
   async function handleSubmit() {
     try {
       const res = await axios.get(
-        "https://react-project-backemd.vercel.app/cart/Productapi"
+        "http://localhost:8000/cart/Productapi"
       );
       setApi(res.data.AllProduct);
     } catch (error) {
@@ -23,7 +23,7 @@ function AllProducts() {
   const updateData = async (id, updatedItem) => {
     try {
       await axios.post(
-        `https://react-project-backemd.vercel.app/cart/updateData/${id}`,
+        `http://localhost:8000/cart/updateData/${id}`,
         updatedItem
       );
       alert("Product Updated Successfully");
@@ -38,7 +38,7 @@ function AllProducts() {
 
   const deleteallproduct = (id) => {
     console.log(id)
-    axios.post(`https://react-project-backemd.vercel.app/cart/deleteallproduct/${id}`).then((res) => {
+    axios.post(`http://localhost:8000/cart/deleteallproduct/${id}`).then((res) => {
       console.log(res);
     });
   };

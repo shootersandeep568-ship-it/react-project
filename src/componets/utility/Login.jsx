@@ -1,82 +1,81 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate, Link } from "react-router-dom";
-import Header from './Header';
-import Listings from '../Admin/Auth/Listing';
+import Header from "./Header";
+import Listings from "../Admin/Auth/Listing";
 
 function Login() {
-
   const navigate = useNavigate();
   const [alldata, setalldata] = useState({});
 
   function getalldata(e) {
     setalldata({
       ...alldata,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const main = new Listings()
-    const res = main.login(alldata)
-    
-    res.then((res) => {
-      console.log(res)
+    try {
+      const main = new Listings();
+      const res = await main.login(alldata);
+
       if (res.data.status === false) {
-        toast.error(res.data.message);
+        toast.error("💀 " + res.data.message);
       } else if (res.data.status === true) {
-        toast.success(`Welcome ${res.data.user.name}`);
+        toast.success(`👻 Welcome ${res.data.user.name}`);
         localStorage.setItem("token", res.data.token);
+
         setTimeout(() => {
           navigate("/");
-        }, 1000);
+        }, 1200);
       } else {
-        toast.error("Something went wrong!....");
+        toast.error("🔥 Something went wrong...");
       }
-    })
-      .catch((err) => {
-        console.log("error in fetching data for login", err);
-      });
+    } catch (err) {
+      console.log(err);
+      toast.error("🧟 Server Error");
+    }
   }
 
   return (
     <>
       <Toaster />
       <Header />
-      <div className='login'>
-        <div className='loginCard'>
-          <h2>Login</h2>
+
+      <div className="spooky-login-container">
+        <div className="fog"></div>
+
+        <div className="spooky-login-card">
+          <h2>🔮 Enter If You Dare</h2>
 
           <form onSubmit={handleSubmit}>
             <input
               type="email"
               name="Emailid"
-              placeholder='Enter Email'
+              placeholder="📧 Enter Email"
               onChange={getalldata}
               required
             />
-
             <input
               type="password"
               name="password"
-              placeholder='Enter Password'
+              placeholder="🔒 Enter Password"
               onChange={getalldata}
               required
             />
-
-            <button type='submit'>Login</button>
-
+            <button type="submit">👁 Login</button>
             <p>
-              Don't have an account?{" "}
-              <Link to="/Singup">Sign Up</Link>
+              New soul?{" "}
+              <Link to="/Singup">Create Account</Link>
             </p>
-
           </form>
         </div>
       </div>
     </>
-  )
+  );
 }
-export default Login
+
+export default Login;

@@ -8,17 +8,10 @@ import axios from "axios";
 function Product() {
     const [api, setApi] = useState([]);
     console.log(api)
-
     async function getProduct() {
-    
-        // const newproduct = new Listings()
-        // const res = newproduct.product()
-        // console.log(res)
-
-        const res = await axios.get("https://react-project-backemd.vercel.app/cart/Productapi");
+        const res = await axios.get("http://localhost:8000/cart/Productapi");
         setApi(res.data.AllProduct);
     }
-
     useEffect(() => {
         getProduct();
     }, []);

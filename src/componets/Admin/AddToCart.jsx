@@ -22,7 +22,7 @@ const AddToCart = () => {
 
     const removeItem = (id) => {
         console.log(id)
-        axios.post(`https://react-project-backemd.vercel.app/cart/deleteCartItem/${id}`).then((res) => {
+        axios.post(`http://localhost:8000/cart/deleteCartItem/${id}`).then((res) => {
             console.log(res);
         });
     };
@@ -34,7 +34,7 @@ const AddToCart = () => {
         async function addQuantity(id) {
             setQuantity(quantity + 1);
             try {
-                const res = await axios.post(`https://react-project-backemd.vercel.app/cart/addQuantity/${id}`,);
+                const res = await axios.post(`http://localhost:8000/cart/addQuantity/${id}`,);
                 setQuantity(res.data.quantity);
                 window.location.reload();
             } catch (error) {
@@ -46,7 +46,7 @@ const AddToCart = () => {
         async function subQuantity(id) {
             setQuantity(quantity - 1);
             try {
-                const res = await axios.post(`https://react-project-backemd.vercel.app/cart/subQuantity/${id}`,);
+                const res = await axios.post(`http://localhost:8000/cart/subQuantity/${id}`,);
                 setQuantity(res.data.quantity);
                 window.location.reload();
             } catch (error) {

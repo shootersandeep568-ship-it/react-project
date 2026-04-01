@@ -1,10 +1,9 @@
-
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="spooky-footer">
 
       <div className="footerTop">
 
@@ -36,7 +35,7 @@ const Footer = () => {
           <a href="/">FAQ</a>
         </div>
 
-        {/* CONSUMER POLICY */}
+        {/* POLICY */}
         <div className="footerColumn">
           <h4>CONSUMER POLICY</h4>
           <a href="/">Cancellation & Returns</a>
@@ -49,15 +48,13 @@ const Footer = () => {
           <a href="/">FSSAI Food Safety Connect</a>
         </div>
 
-        {/* MAIL US */}
+        {/* ADDRESS */}
         <div className="footerColumn address">
           <h4>Mail Us:</h4>
           <p>
             Flipkart Internet Private Limited,<br />
-            Buildings Alyssa, Begonia &<br />
-            Clove Embassy Tech Village,<br />
-            Outer Ring Road, Devarabeesanahalli Village,<br />
-            Bengaluru, 560103,<br />
+            Buildings Alyssa, Begonia & Clove Embassy Tech Village,<br />
+            Outer Ring Road, Bengaluru, 560103,<br />
             Karnataka, India
           </p>
 
@@ -69,15 +66,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* REGISTERED OFFICE */}
+        {/* OFFICE */}
         <div className="footerColumn address">
           <h4>Registered Office Address:</h4>
           <p>
             Flipkart Internet Private Limited,<br />
-            Buildings Alyssa, Begonia &<br />
-            Clove Embassy Tech Village,<br />
-            Outer Ring Road, Devarabeesanahalli Village,<br />
-            Bengaluru, 560103,<br />
+            Buildings Alyssa, Begonia & Clove Embassy Tech Village,<br />
+            Outer Ring Road, Bengaluru, 560103,<br />
             Karnataka, India
           </p>
           <p>CIN : U51109KA2012PTC066107</p>
@@ -86,9 +81,10 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom */}
       <div className="footerBottom">
         <span>© 2007-2026 Flipkart.com</span>
+
         <div className="paymentIcons">
           <img src="https://img.icons8.com/color/48/visa.png" alt="visa" />
           <img src="https://img.icons8.com/color/48/mastercard.png" alt="mastercard" />

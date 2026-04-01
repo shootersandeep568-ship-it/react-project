@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import Header from './Header';
-import Listings from '../Admin/Auth/Listing';
+import Header from "./Header";
+import Listings from "../Admin/Auth/Listing";
 
 function Signup() {
   const navigate = useNavigate();
@@ -11,25 +11,26 @@ function Signup() {
   function getalldata(e) {
     setalldata({
       ...alldata,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const mainsingup = new Listings()
-      const res = await mainsingup.Singup(alldata)
+      const mainsingup = new Listings();
+      const res = await mainsingup.Singup(alldata);
+
       if (res.data.status) {
-        toast.success("Signup Successful");
+        toast.success("🎃 Account Created!");
         setTimeout(() => {
           navigate("/Login");
         }, 2000);
       } else {
-        toast.error("Something went wrong");
+        toast.error("💀 Something went wrong...");
       }
-
     } catch (error) {
-      toast.error("Server Error");
+      toast.error("🔥 Server Error");
     }
   }
 
@@ -37,15 +38,18 @@ function Signup() {
     <>
       <Toaster />
       <Header />
-      <div className='signup'>
-        <div className='signupCard'>
-          <h2>Create Account</h2>
-          <form onSubmit={handleSubmit}>
 
+      <div className="spooky-container">
+        <div className="fog"></div>
+
+        <div className="spooky-card">
+          <h2>👻 Create Account</h2>
+
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
-              name='username'
-              placeholder='Enter Username'
+              name="username"
+              placeholder="🕸 Enter Username"
               onChange={getalldata}
               required
             />
@@ -53,7 +57,7 @@ function Signup() {
             <input
               type="email"
               name="email"
-              placeholder='Enter Email'
+              placeholder="📧 Enter Email"
               onChange={getalldata}
               required
             />
@@ -61,23 +65,22 @@ function Signup() {
             <input
               type="password"
               name="password"
-              placeholder='Enter Password'
+              placeholder="🔒 Enter Password"
               onChange={getalldata}
               required
             />
 
-            <button type='submit'>Sign Up</button>
+            <button type="submit">🎃 Sign Up</button>
 
             <p>
-              Already have an account? <Link to="/Login">Login</Link>
+              Already have an account?{" "}
+              <Link to="/Login">Enter the darkness</Link>
             </p>
-
           </form>
-
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Signup;
