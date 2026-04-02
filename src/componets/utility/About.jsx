@@ -4,54 +4,32 @@ const About = () => {
 
   const data = [
     {
-      title: "MOST SEARCHED ON FLIPKART",
+      title: "☠ MOST SEARCHED CURSED ITEMS ☠",
       items: [
         "iPhone 15", "Samsung Galaxy S24", "OPPO K14x 5G",
         "Laptops", "Men's Shoes", "Smart Watches",
         "Earphones", "Air Conditioners", "LED TVs",
-        "Women's Dresses", "Kitchen Appliances,Samsung Mobiles", "Apple iPhones", "Realme Mobiles",
-        "OnePlus Mobiles", "Redmi Phones", "5G Mobiles",
-        "Mobiles Under 10000", "Mobiles Under 20000,Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops,Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops,Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops,Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops"
+        "Women's Dresses", "Kitchen Appliances"
       ]
     },
     {
-      title: "MOBILES",
+      title: "📱 HAUNTED MOBILES",
       items: [
         "Samsung Mobiles", "Apple iPhones", "Realme Mobiles",
         "OnePlus Mobiles", "Redmi Phones", "5G Mobiles",
-        "Mobiles Under 10000", "Mobiles Under 20000,iPhone 15", "Samsung Galaxy S24", "OPPO K14x 5G",
-        "Laptops", "Men's Shoes", "Smart Watches",
-        "Earphones", "Air Conditioners", "LED TVsiPhone 15", "Samsung Galaxy S24", "OPPO K14x 5G",
-        "Laptops", "Men's Shoes", "Smart Watches",
-        "Earphones", "Air Conditioners", "LED TVsiPhone 15", "Samsung Galaxy S24", "OPPO K14x 5G",
-        "Laptops", "Men's Shoes", "Smart Watches",
-        "Earphones", "Air Conditioners", "LED TVs"
+        "Mobiles Under 10000", "Mobiles Under 20000"
       ]
     },
     {
-      title: "LAPTOPS",
+      title: "💻 CURSED LAPTOPS",
       items: [
         "Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops,Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops,Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops,Apple Laptops", "HP Laptops", "Dell Laptops",
         "Gaming Laptops", "Laptops Under 50000",
         "i5 Laptops", "i7 Laptops"
       ]
     },
     {
-      title: "FASHION",
+      title: "👗 DARK FASHION",
       items: [
         "Men's Shirts", "Women's Dresses",
         "Jeans", "T-Shirts", "Shoes",
@@ -59,7 +37,7 @@ const About = () => {
       ]
     },
     {
-      title: "HOME & FURNITURE",
+      title: "🏚️ HAUNTED HOME & FURNITURE",
       items: [
         "Beds", "Sofa Sets", "Dining Tables",
         "Wardrobes", "Office Chairs", "Mattress"
@@ -68,19 +46,26 @@ const About = () => {
   ];
 
   return (
-    <div className="brandDirectory">
-      <h2>Top Stories : Brand Directory</h2>
+    <div className="spooky-about">
+
+      <h2 className="main-title">☠ Dark Store : Brand Directory ☠</h2>
 
       {data.map((section, index) => (
         <div className="brandSection" key={index}>
-          <h3>{section.title}</h3>
+
+          <h3 className="section-title">{section.title}</h3>
+
           <div className="brandLinks">
             {section.items.map((item, i) => (
-              <a href="/" key={i}>{item}</a>
+              <a href="/" key={i} className="linkItem">
+                ☠ {item}
+              </a>
             ))}
           </div>
+
         </div>
       ))}
+
     </div>
   );
 };

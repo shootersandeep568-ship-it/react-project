@@ -1,44 +1,45 @@
 import React from "react";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaSearch, FaShoppingCart, FaGhost } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 const Header = () => {
-    return (
-        <div className="header">
-            {/* Left */}
-            <div className="header__left">
-                <img
-                    src=""
-                    alt="Flipkart"
-                    className="logo"
-                />
-                <span className="explore">
-                    Explore <span>Plus</span>
-                </span>
-            </div>
+  return (
+    <div className="header">
+      {/* Left */}
+      <div className="header__left">
+        <FaGhost className="ghostIcon" />
+        <h2 className="logoText">SpookyShop</h2>
+      </div>
 
-            {/* Search */}
-            <div className="header__search">
-                <input
-                    type="text"
-                    placeholder="Search for products, brands and more"
-                />
-                <FaSearch className="searchIcon" />
-            </div>
+      {/* Search */}
+      <div className="header__search">
+        <input
+          type="text"
+          placeholder="Search cursed items..."
+        />
+        <FaSearch className="searchIcon" />
+      </div>
 
-            {/* Right */}
-            <div className="header__right">
-                <button className="loginBtn"> <Link to={"/Login"}>Login</Link></button>
-                <button className="loginBtn"> <Link to={"/admin/Allproduct"}>Allproducts</Link></button>
-                <span className="seller"> <Link to={"/Createproduct"}>Create Product</Link></span>
-                <span className="cart" ><FaShoppingCart /> <Link style={{ color: "white" }} to={"/AddToCart"}>Cart</Link></span>
-            </div>
+      {/* Right */}
+      <div className="header__right">
+        <Link to={"/Login"}>
+          <button className="spookyBtn">Login</button>
+        </Link>
 
-        </div>
+        <Link to={"/admin/Allproduct"}>
+          <button className="spookyBtn">All Products</button>
+        </Link>
 
-    );
+        <Link to={"/Createproduct"} className="seller">
+          Create Product
+        </Link>
+
+        <Link to={"/AddToCart"} className="cart">
+          <FaShoppingCart /> Cart
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default Header;
-
