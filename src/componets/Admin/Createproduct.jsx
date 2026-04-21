@@ -62,14 +62,14 @@ function Createproduct() {
             <Toaster />
             <Header />
 
-            <div className="container">
-                <div className="card">
+            <div className="containerr">
+                <div className="cardd">
 
                     <h2>Add New Product</h2>
 
                     <form onSubmit={handleSubmit}>
 
-                        <div className="grid">
+                        <div className="gridd">
 
                             <div className="form-group">
                                 <label>Title</label>
@@ -127,7 +127,7 @@ function Createproduct() {
 
                         </div>
 
-                        <button className="btn">Create Product</button>
+                        <button className="btnn">Create Product</button>
 
                     </form>
                 </div>

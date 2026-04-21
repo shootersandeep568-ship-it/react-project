@@ -15,6 +15,7 @@ function SliderDaata() {
   }, [category]);
 
   return (
+    
     <div className="slider-container">
       {filterCategory.map((item) => (
         <div className="card" key={item.id}>

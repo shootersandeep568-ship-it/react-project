@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 
 function AllProducts() {
   const [api, setApi] = useState([]);
-  const [update, setUpdate] = useState(null);
+  const [updateIndex, setUpdateIndex] = useState(null);
 
-  async function handleSubmit() {
+  async function getProducts() {
     try {
       const res = await axios.get(
         "http://localhost:8000/cart/Productapi"
@@ -17,7 +17,7 @@ function AllProducts() {
   }
 
   useEffect(() => {
-    handleSubmit();
+    getProducts();
   }, []);
 
   const updateData = async (id, updatedItem) => {
@@ -26,32 +26,35 @@ function AllProducts() {
         `http://localhost:8000/cart/updateData/${id}`,
         updatedItem
       );
-      alert("Product Updated Successfully");
-      setUpdate(null);
-      handleSubmit();
+      alert("👻 Product Updated Successfully");
+      setUpdateIndex(null);
+      getProducts();
     } catch (error) {
       console.log(error);
     }
   };
 
-
-
-  const deleteallproduct = (id) => {
-    console.log(id)
-    axios.post(`http://localhost:8000/cart/deleteallproduct/${id}`).then((res) => {
-      console.log(res);
-    });
+  const deleteProduct = async (id) => {
+    try {
+      await axios.post(
+        `http://localhost:8000/cart/deleteallproduct/${id}`
+      );
+      alert("💀 Product Deleted");
+      getProducts();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
     <>
-      <h1 className="heading">Admin Dashboard</h1>
+      <h1 className="spooky-heading">💀 Admin Dashboard</h1>
 
-      <div className="table-container">
-        <table className="responsive-table">
+      <div className="spooky-table-container">
+        <table className="spooky-table">
           <thead>
             <tr>
-              <th>S.NO</th>
+              <th>#</th>
               <th>Title</th>
               <th>Description</th>
               <th>Price</th>
@@ -60,74 +63,73 @@ function AllProducts() {
           </thead>
 
           <tbody>
-            {api &&
-              api.map((item, index) => (
-                <React.Fragment key={item._id}>
+            {api.map((item, index) => (
+              <React.Fragment key={item._id}>
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{item.title}</td>
+                  <td>{item.description}</td>
+                  <td>₹{item.price}</td>
+                  <td>
+                    <button
+                      className="spooky-update"
+                      onClick={() => setUpdateIndex(index)}
+                    >
+                      👻 Update
+                    </button>
+
+                    <button
+                      className="spooky-delete"
+                      onClick={() => deleteProduct(item._id)}
+                    >
+                      💀 Delete
+                    </button>
+                  </td>
+                </tr>
+
+                {updateIndex === index && (
                   <tr>
-                    <td>{index + 1}</td>
-                    <td>{item.title}</td>
-                    <td>{item.description}</td>
-                    <td>₹{item.price}</td>
-                    <td>
-                      <button
-                        className="update-btn"
-                        onClick={() => setUpdate(index)}
+                    <td colSpan="5">
+                      <form
+                        className="spooky-form"
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          updateData(item._id, item);
+                        }}
                       >
-                        Update
-                      </button>
-                      <button className="delete-btn" onClick={() => deleteallproduct(item._id)} >
-                        Delete
-                      </button>
+                        <input
+                          type="text"
+                          defaultValue={item.title}
+                          onChange={(e) =>
+                            (item.title = e.target.value)
+                          }
+                        />
+
+                        <input
+                          type="text"
+                          defaultValue={item.description}
+                          onChange={(e) =>
+                            (item.description = e.target.value)
+                          }
+                        />
+
+                        <input
+                          type="number"
+                          defaultValue={item.price}
+                          onChange={(e) =>
+                            (item.price = e.target.value)
+                          }
+                        />
+
+                        <button type="submit" className="spooky-save">
+                          🔥 Save
+                        </button>
+                      </form>
                     </td>
                   </tr>
-
-                  {update === index && (
-                    <tr>
-                      <td colSpan="5">
-                        <form
-                          className="update-form"
-                          onSubmit={(e) => {
-                            e.preventDefault();
-                            updateData(item._id, item);
-                          }}
-                        >
-                          <input
-                            type="text"
-                            defaultValue={item.title}
-                            onChange={(e) =>
-                              (item.title = e.target.value)
-                            }
-                            placeholder="Title"
-                          />
-
-                          <input
-                            type="text"
-                            defaultValue={item.description}
-                            onChange={(e) =>
-                            (item.description =
-                              e.target.value)
-                            }
-                            placeholder="Description"
-                          />
-
-                          <input
-                            type="number"
-                            defaultValue={item.price}
-                            onChange={(e) =>
-                              (item.price = e.target.value)
-                            }
-                            placeholder="Price"
-                          />
-
-                          <button type="submit">
-                            Save
-                          </button>
-                        </form>
-                      </td>
-                    </tr>
-                  )}
-                </React.Fragment>
-              ))}
+                )}
+              </React.Fragment>
+            ))}
           </tbody>
         </table>
       </div>
