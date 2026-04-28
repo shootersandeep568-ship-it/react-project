@@ -1,56 +1,44 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #0d0d0d;
-  padding: 12px 30px;
-  border-bottom: 2px solid crimson;
-  box-shadow: 0 0 20px crimson;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #111;
+  color: white;
+  position: relative;
 }
 
-/* LEFT */
 .header__left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.ghostIcon {
-  color: white;
-  font-size: 28px;
-  animation: float 2s infinite ease-in-out;
-}
-
 .logoText {
-  color: crimson;
-  font-family: "Creepster", cursive;
-  letter-spacing: 2px;
+  font-size: 20px;
 }
 
-/* SEARCH */
 .header__search {
   display: flex;
   align-items: center;
-  background: #1a1a1a;
+  background: #222;
   padding: 5px 10px;
   border-radius: 5px;
-  border: 1px solid crimson;
+  width: 40%;
 }
 
 .header__search input {
-  background: transparent;
   border: none;
   outline: none;
+  background: transparent;
   color: white;
-  width: 300px;
+  width: 100%;
 }
 
 .searchIcon {
-  color: crimson;
-  cursor: pointer;
+  margin-left: 5px;
 }
 
-/* RIGHT */
 .header__right {
   display: flex;
   align-items: center;
@@ -58,47 +46,53 @@
 }
 
 .spookyBtn {
-  background: black;
-  color: crimson;
-  border: 1px solid crimson;
-  padding: 6px 14px;
+  background: purple;
+  color: white;
+  border: none;
+  padding: 6px 12px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.spookyBtn:hover {
-  background: crimson;
-  color: black;
-  box-shadow: 0 0 10px crimson;
-}
-
-.seller {
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: white;
   text-decoration: none;
 }
 
-.cart {
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+/* Hamburger */
+.menuIcon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
 }
 
-/* Animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
   }
 
-  50% {
-    transform: translateY(-5px);
+  .header__search {
+    display: none;
   }
 
-  100% {
-    transform: translateY(0px);
+  .header__right {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    display: none;
+  }
+
+  .header__right.active {
+    display: flex;
   }
 }
-
 /* ================================== slider ==================================================== */
 
 .slider {
