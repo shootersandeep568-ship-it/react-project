@@ -7,7 +7,7 @@ function Product() {
 
   async function getProduct() {
     try {
-      const res = await axios.get("http://localhost:8000/cart/Productapi");
+      const res = await axios.get("https://react-project-beta-lyart.vercel.app/cart/Productapi");
       setApi(res.data.AllProduct);
     } catch (err) {
       console.log("Error:", err);
