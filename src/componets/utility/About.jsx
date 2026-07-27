@@ -1,73 +1,25 @@
 import React from "react";
 
-const About = () => {
+const sections = [
+  { title: "Most loved", items: ["New arrivals", "Bestsellers", "Editor's picks", "Gifts under ₹2,000", "Premium essentials"] },
+  { title: "Technology", items: ["Smartphones", "Laptops", "Audio", "Wearables", "Home entertainment"] },
+  { title: "Style", items: ["Women's fashion", "Men's fashion", "Shoes", "Watches", "Accessories"] },
+  { title: "Home", items: ["Furniture", "Kitchen", "Decor", "Bedding", "Lighting"] },
+];
 
-  const data = [
-    {
-      title: "☠ MOST SEARCHED CURSED ITEMS ☠",
-      items: [
-        "iPhone 15", "Samsung Galaxy S24", "OPPO K14x 5G",
-        "Laptops", "Men's Shoes", "Smart Watches",
-        "Earphones", "Air Conditioners", "LED TVs",
-        "Women's Dresses", "Kitchen Appliances"
-      ]
-    },
-    {
-      title: "📱 HAUNTED MOBILES",
-      items: [
-        "Samsung Mobiles", "Apple iPhones", "Realme Mobiles",
-        "OnePlus Mobiles", "Redmi Phones", "5G Mobiles",
-        "Mobiles Under 10000", "Mobiles Under 20000"
-      ]
-    },
-    {
-      title: "💻 CURSED LAPTOPS",
-      items: [
-        "Apple Laptops", "HP Laptops", "Dell Laptops",
-        "Gaming Laptops", "Laptops Under 50000",
-        "i5 Laptops", "i7 Laptops"
-      ]
-    },
-    {
-      title: "👗 DARK FASHION",
-      items: [
-        "Men's Shirts", "Women's Dresses",
-        "Jeans", "T-Shirts", "Shoes",
-        "Sneakers", "Watches"
-      ]
-    },
-    {
-      title: "🏚️ HAUNTED HOME & FURNITURE",
-      items: [
-        "Beds", "Sofa Sets", "Dining Tables",
-        "Wardrobes", "Office Chairs", "Mattress"
-      ]
-    }
-  ];
-
-  return (
-    <div className="spooky-about">
-
-      <h2 className="main-title">☠ Dark Store : Brand Directory ☠</h2>
-
-      {data.map((section, index) => (
-        <div className="brandSection" key={index}>
-
-          <h3 className="section-title">{section.title}</h3>
-
-          <div className="brandLinks">
-            {section.items.map((item, i) => (
-              <a href="/" key={i} className="linkItem">
-                ☠ {item}
-              </a>
-            ))}
-          </div>
-
+const About = () => (
+  <section className="spooky-about">
+    <p className="eyebrow">EXPLORE AURELIA</p>
+    <h2 className="main-title">A considered collection, beautifully chosen.</h2>
+    {sections.map((section) => (
+      <div className="brandSection" key={section.title}>
+        <h3 className="section-title">{section.title}</h3>
+        <div className="brandLinks">
+          {section.items.map((item) => <a href="/" key={item} className="linkItem">{item}</a>)}
         </div>
-      ))}
-
-    </div>
-  );
-};
+      </div>
+    ))}
+  </section>
+);
 
 export default About;

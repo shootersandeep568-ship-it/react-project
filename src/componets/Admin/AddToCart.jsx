@@ -2,15 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const AddToCart = () => {
-
     const [cartapi, setcartApi] = useState([]);
-
     // =====================================================================================
-
     async function Addtocartt() {
         try {
             const res = await axios.get("http://localhost:8000/cart/getCart");
-
             // null item remove
             const safeData = res?.data?.data?.filter(
                 (item) => item && item.item

@@ -2,6 +2,28 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+function getImageSource(image) {
+  const bytes = image?.data?.data;
+
+  if (!Array.isArray(bytes) || bytes.length === 0) {
+    return "";
+  }
+
+  // Converting a large image with one `...bytes` call can exceed the browser's
+  // argument limit and stop the complete product list from rendering.
+  let binary = "";
+  const chunkSize = 0x8000;
+  for (let index = 0; index < bytes.length; index += chunkSize) {
+    binary += String.fromCharCode(...bytes.slice(index, index + chunkSize));
+  }
+
+  const contentType = image?.contentType?.startsWith("image/")
+    ? image.contentType
+    : "image/webp";
+
+  return `data:${contentType};base64,${btoa(binary)}`;
+}
+
 function Product() {
   const [api, setApi] = useState([]);
 
@@ -20,12 +42,11 @@ function Product() {
 
   return (
     <div className="spooky-wrapper">
-      
+
       {/* Title */}
       <div className="Mypro">
-        <h2 className="spooky-heading">
-          🕸 My <span>Dark</span> Products 🕸
-        </h2>
+        <p className="eyebrow">THE AURELIA EDIT</p>
+        <h2 className="spooky-heading">Curated for everyday luxury</h2>
       </div>
 
       {/* Products */}
@@ -38,11 +59,7 @@ function Product() {
               {/* Image */}
               <div className="img-wrapper">
                 <img
-                  src={`data:image/;base64,${btoa(
-                    String.fromCharCode(
-                      ...new Uint8Array(item?.image?.data?.data || "")
-                    )
-                  )}`}
+                  src={getImageSource(item.image)}
                   alt={item.title}
                 />
               </div>

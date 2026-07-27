@@ -3,6 +3,21 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
+function getImageSource(image) {
+    const bytes = image?.data?.data;
+    if (!Array.isArray(bytes) || bytes.length === 0) return "";
+
+    let binary = "";
+    const chunkSize = 0x8000;
+    for (let index = 0; index < bytes.length; index += chunkSize) {
+        binary += String.fromCharCode(...bytes.slice(index, index + chunkSize));
+    }
+
+    const contentType = image?.contentType?.startsWith("image/")
+        ? image.contentType
+        : "image/webp";
+    return `data:${contentType};base64,${btoa(binary)}`;
+}
 
 
 const ProductDetails = () => {
@@ -17,7 +32,7 @@ const ProductDetails = () => {
     }
     useEffect(() => {
         getData();
-    });
+    }, [id]);
 
     async function AddToCart(id) {
         console.log(id)
@@ -37,11 +52,7 @@ const ProductDetails = () => {
                 {/* LEFT */}
                 <div className="left">
                     <img
-                        src={`data:image/;base64,${btoa(
-                            String.fromCharCode(
-                                ...new Uint8Array(apiData?.image?.data?.data || "")
-                            )
-                        )}`}
+                        src={getImageSource(apiData?.image)}
                         alt="images" />
                     <div className="thumbs">
                     </div>

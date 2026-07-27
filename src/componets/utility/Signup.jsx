@@ -37,6 +37,7 @@ function Signup() {
   return (
     <>
       <Toaster />
+      
       <Header />
 
       <div className="spooky-container">

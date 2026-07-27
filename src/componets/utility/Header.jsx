@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch, FaShoppingCart, FaGhost, FaBars } from "react-icons/fa";
+import { FaSearch, FaShoppingCart, FaGem, FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -9,8 +9,7 @@ const Header = () => {
     <div className="header">
       {/* Left */}
       <div className="header__left">
-        <FaGhost className="ghostIcon" />
-        <h2 className="logoText">SpookyShop</h2>
+        <Link to="/" className="brand"><FaGem /> <span>AURELIA</span></Link>
       </div>
 
       {/* Hamburger */}
@@ -20,23 +19,21 @@ const Header = () => {
 
       {/* Search */}
       <div className="header__search">
-        <input type="text" placeholder="Search cursed items..." />
+        <input type="text" placeholder="Search curated pieces" />
         <FaSearch className="searchIcon" />
       </div>
 
       {/* Right */}
       <div className={`header__right ${menuOpen ? "active" : ""}`}>
         <Link to={"/Login"}>
-          <button className="spookyBtn">Login</button>
+          <button className="spookyBtn">Sign in</button>
         </Link>
 
         <Link to={"/admin/Allproduct"}>
-          <button className="spookyBtn">All Products</button>
+          <button className="spookyBtn">Collection</button>
         </Link>
 
-        <Link to={"/Createproduct"} className="seller">
-          Create Product
-        </Link>
+        <Link to={"/Createproduct"} className="seller">Sell with us</Link>
 
         <Link to={"/AddToCart"} className="cart">
           <FaShoppingCart /> Cart
