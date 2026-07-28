@@ -24,13 +24,22 @@ const ProductDetails = () => {
     const { id } = useParams();
     let [apiData, setApiData] = useState([]);
     console.log(apiData);
-    async function getData() {
-        let getApiData = await axios.get("http://localhost:8000/Cart/Productapi")
-        let filterData = await getApiData.data.AllProduct
-        const finalData = filterData.find((item) => item._id === id)
-        setApiData(finalData)
-    }
     useEffect(() => {
+        const getData = async () => {
+            try {
+                const getApiData = await axios.get(
+                    "http://localhost:8000/Cart/Productapi"
+                );
+
+                const filterData = getApiData.data.AllProduct;
+                const finalData = filterData.find((item) => item._id === id);
+
+                setApiData(finalData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
         getData();
     }, [id]);
 
